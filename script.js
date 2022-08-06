@@ -23,11 +23,13 @@ var selectedSpecialCharacters = "!?@#$%^&*()"
 
 // Write password to the #password input
      generateBtn.onclick = function userPrompt(){
+
    length= window.prompt("How long do you want your password to be in characters?");
-      if(length<8 ||length>128){
-        alert("Please enter a lenght between 8 and 128");
-        userPrompt();
+      if(length<8 ||length>128  ){
+        alert("Please enter a length between 8 and 128");
+        userPrompt(); //asks you again if you dont put in a proper value
       }
+     
       else{
    specialCharacters=window.confirm("Do you want special characters in your password?");
    lowerCaseCharacters=window.confirm("Do you want lower case characters in your password?");
