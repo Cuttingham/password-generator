@@ -11,11 +11,15 @@ var length =0;
 //  "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x",
 //   "y", "z"," ","!","#","$","%","&","(",")","*","+","-",".","/",":",";","<","=",">","?","@","[",,"]","^","_","`","{","|","}","~"]
 
-  var lowerCaseLetters = ['a', 'b','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
-  var upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  var numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  var selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
+  // var lowerCaseLetters = ['a', 'b','c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
+  // var upperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  // var numbersZeroToNine = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  // var selectedSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
 
+var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseLetters =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbersZeroToNine = "1234567890";
+var selectedSpecialCharacters = "!?@#$%^&*()"
 
 // Write password to the #password input
      generateBtn.onclick = function userPrompt(){
@@ -35,33 +39,29 @@ var length =0;
    var truthCounter = 0;
   if(specialCharacters){
     charactersToUse=charactersToUse.concat(selectedSpecialCharacters);
-    // var specialCharacterPickOne = selectedSpecialCharacters[(Math.floor(Math.random()*selectedSpecialCharacters.length))]; 
-    // console.log(specialCharacterPickOne);
-    // password.unshift(specialCharacterPickOne);
-    // truthCounter++
+    var specialCharacterPickOne = selectedSpecialCharacters[(Math.floor(Math.random()*selectedSpecialCharacters.length))]; 
+    console.log(specialCharacterPickOne);
+    password.unshift(specialCharacterPickOne);
+    truthCounter++
   }
   if(lowerCaseCharacters){
     charactersToUse=charactersToUse.concat(lowerCaseLetters);
-    // var lowerCaseCharactersPickOne = lowerCaseLetters[(Math.floor(Math.random()*lowerCaseLetters.length))];
-    // console.log(lowerCaseCharactersPickOne);
-    // password.unshift(lowerCaseCharactersPickOne);
-    // truthCounter++
+    var lowerCaseCharactersPickOne = lowerCaseLetters[(Math.floor(Math.random()*lowerCaseLetters.length))];
+    console.log(lowerCaseCharactersPickOne);
+    password.unshift(lowerCaseCharactersPickOne);
+    truthCounter++
   }
  if(upperCaseCharacters){
   charactersToUse=charactersToUse.concat(upperCaseLetters);
-  // password.unshift(upperCaseLetters[(Math.floor(Math.random()*upperCaseLetters.length))]);
-  // password.unshift(Math.floor(Math.random()*upperCaseLetters.length));
-  // truthCounter++
+  password.unshift(upperCaseLetters[(Math.floor(Math.random()*upperCaseLetters.length))]);
+  truthCounter++
  }
  if(numericCharacters){
   charactersToUse = charactersToUse.concat(numbersZeroToNine);
-  // password.unshift((numericCharacters[Math.floor(Math.random()*numericCharacters.length)]));
-  // password.unshift(Math.floor(Math.random()*numbersZeroToNine.length));
-  // truthCounter++
+  password.unshift((numbersZeroToNine[Math.floor(Math.random()*numbersZeroToNine.length)]));
+  truthCounter++
  }
-//  password = password.join();
-//  console.log(password);
-
+ password = password.join('');  //thank god for this 
 
  for(var i=truthCounter;i<length;i++){
   var arrayIndex =Math.floor(Math.random()*charactersToUse.length);
