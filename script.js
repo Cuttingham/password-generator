@@ -35,31 +35,32 @@ var length =0;
    var truthCounter = 0;
   if(specialCharacters){
     charactersToUse=charactersToUse.concat(selectedSpecialCharacters);
-    var specialCharacterPickOne = selectedSpecialCharacters[(Math.floor(Math.random()*selectedSpecialCharacters.length))]; 
-    console.log(specialCharacterPickOne);
-    password.unshift(specialCharacterPickOne);
-    truthCounter++
+    // var specialCharacterPickOne = selectedSpecialCharacters[(Math.floor(Math.random()*selectedSpecialCharacters.length))]; 
+    // console.log(specialCharacterPickOne);
+    // password.unshift(specialCharacterPickOne);
+    // truthCounter++
   }
   if(lowerCaseCharacters){
     charactersToUse=charactersToUse.concat(lowerCaseLetters);
-    var lowerCaseCharactersPickOne = lowerCaseLetters[(Math.floor(Math.random()*lowerCaseLetters.length))];
-    console.log(lowerCaseCharactersPickOne);
-    password.unshift(lowerCaseCharactersPickOne);
-    truthCounter++
+    // var lowerCaseCharactersPickOne = lowerCaseLetters[(Math.floor(Math.random()*lowerCaseLetters.length))];
+    // console.log(lowerCaseCharactersPickOne);
+    // password.unshift(lowerCaseCharactersPickOne);
+    // truthCounter++
   }
  if(upperCaseCharacters){
   charactersToUse=charactersToUse.concat(upperCaseLetters);
-  password.unshift(upperCaseLetters[(Math.floor(Math.random()*upperCaseLetters.length))]);
+  // password.unshift(upperCaseLetters[(Math.floor(Math.random()*upperCaseLetters.length))]);
   // password.unshift(Math.floor(Math.random()*upperCaseLetters.length));
-  truthCounter++
+  // truthCounter++
  }
  if(numericCharacters){
   charactersToUse = charactersToUse.concat(numbersZeroToNine);
-  password.unshift((numericCharacters[Math.floor(Math.random()*numericCharacters.length)]));
+  // password.unshift((numericCharacters[Math.floor(Math.random()*numericCharacters.length)]));
   // password.unshift(Math.floor(Math.random()*numbersZeroToNine.length));
-  truthCounter++
+  // truthCounter++
  }
- console.log(password);
+//  password = password.join();
+//  console.log(password);
 
 
  for(var i=truthCounter;i<length;i++){
